@@ -1,7 +1,7 @@
 
 import { BrowserRouter, Route, Routes } from "react-router-dom"
 import LoginForm from "./LoginForm"
-import Home from "./Home"
+import HomeScreen from "./Screens/HomeScreen"
 
 const App = () => {
   return (
@@ -11,7 +11,7 @@ const App = () => {
       <BrowserRouter>
         <Routes>
           <Route index element={<LoginForm />} />
-          <Route path="/home" element={<Home />} />
+          <Route path="/home" element={<HomeScreen />} />
         </Routes>
       </BrowserRouter>
     </div>
