@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { Container, TextField, Button, Typography, Grid,  Slider } from '@mui/material';
-import { DataGrid, GridColDef } from '@mui/x-data-grid';
+import { Container, TextField, Button, Typography, Grid, Slider } from '@mui/material';
 import StudentDetails from '../components/StudentDetails';
+import SideBar from '../components/SideBar';
+import NavBar from '../components/NavBar';
 
 interface Student {
   id: number;
@@ -21,22 +22,22 @@ const HomeScreen: React.FC = () => {
   const [newStudentAddress, setNewStudentAddress] = useState('');
   const [newStudentPhoto, setNewStudentPhoto] = useState('');
   const [newStudentPassed, setNewStudentPassed] = useState('');
-  const [selectedStudent, setSelectedStudent] = useState<Student | null>(null);
+  const [selectedStudent, setSelectedStudent] = useState<Student | null>(null);   
 
   const addStudent = () => {
     if (newStudentName.trim() && newStudentStd.trim()) {
-      setStudents([
-        ...students,
-        {
-          id: Date.now(),
-          name: newStudentName,
-          std: newStudentStd,
-          age: newStudentAge,
-          address: newStudentAddress,
-          photo: newStudentPhoto,
-          passed: newStudentPassed,
-        },
-      ]);
+      const newStudent: Student = {
+        id: Date.now(),
+        name: newStudentName,
+        std: newStudentStd,
+        age: newStudentAge,
+        address: newStudentAddress,
+        photo: newStudentPhoto,
+        passed: newStudentPassed,
+      };
+
+      setStudents([...students, newStudent]);
+      setSelectedStudent(newStudent);
       setNewStudentName('');
       setNewStudentStd('');
       setNewStudentAge(0);
@@ -50,153 +51,117 @@ const HomeScreen: React.FC = () => {
     setNewStudentAge(newValue);
   };
 
-  const columns: GridColDef[] = [
-    { field: 'name', headerName: 'Name', width: 150 },
-    { field: 'std', headerName: 'Class', width: 100 },
-    { field: 'age', headerName: 'Age', width: 100 },
-    { field: 'address', headerName: 'Address', width: 200 },
-    { field: 'photo', headerName: 'Photo URL', width: 200 },
-    { field: 'passed', headerName: 'Status', width: 100 },
-    {
-      field: 'actions',
-      headerName: 'Actions',
-      width: 150,
-      renderCell: (params) => (
-        <Button
-          variant="contained"
-          color="secondary"
-          onClick={() => setSelectedStudent(students.find(student => student.id === params.id)!)}
-        >
-          View Details
-        </Button>
-      ),
-    },
-  ];
-
-  const rows = students.map((student) => ({
-    id: student.id,
-    name: student.name,
-    std: student.std,
-    age: student.age,
-    address: student.address,
-    photo: student.photo,
-    passed: student.passed,
-  }));
-
   return (
-    <Container style={styles.container}>
-      <Typography variant="h2" gutterBottom style={styles.title}>
-        Student Management App
-      </Typography>
-      <Grid container spacing={4}>
-        <Grid item xs={12} sm={6}>
-          <TextField
-            label="Student Name"
-            fullWidth
-            value={newStudentName}
-            onChange={(e) => setNewStudentName(e.target.value)}
-            margin="normal"
-            style={styles.textField}
-          />
-          <TextField
-            label="Class"
-            fullWidth
-            value={newStudentStd}
-            onChange={(e) => setNewStudentStd(e.target.value)}
-            margin="normal"
-            style={styles.textField}
-          />
-          <Typography gutterBottom>Age</Typography>
-          <Slider
-            value={newStudentAge}
-            onChange={handleAgeChange}
-            aria-labelledby="age-slider"
-            valueLabelDisplay="auto"
-            step={1}
-            marks
-            min={0}
-            max={100}
-          />
-          <TextField
-            label="Address"
-            fullWidth
-            value={newStudentAddress}
-            onChange={(e) => setNewStudentAddress(e.target.value)}
-            margin="normal"
-            style={styles.textField}
-          />
-          <TextField
-            label="Photo URL"
-            fullWidth
-            value={newStudentPhoto}
-            onChange={(e) => setNewStudentPhoto(e.target.value)}
-            margin="normal"
-            style={styles.textField}
-          />
-          <TextField
-            label="Status"
-            fullWidth
-            value={newStudentPassed}
-            onChange={(e) => setNewStudentPassed(e.target.value)}
-            margin="normal"
-            style={styles.textField}
-          />
-          <Button
-            variant="contained"
-            color="primary"
-            onClick={addStudent}
-            style={styles.button}
-          >
-            Add Student
-          </Button>
-        </Grid>
-        <Grid item xs={12} sm={6} style={styles.studentList}>
-          <div style={{ height: 400, width: '100%' }}>
-            <DataGrid
-              rows={rows}
-              columns={columns}
-              pageSize={5}
-              onRowClick={(params) => setSelectedStudent(students.find(student => student.id === params.id)!)}
+    <div>
+      <NavBar />
+      <SideBar />
+      <Container style={styles.container}>
+        <Typography variant="h4" style={styles.title}>
+          Student Details
+        </Typography>
+        <Grid container spacing={4}>
+          <Grid item xs={12} sm={6}>
+            <TextField
+              label="Student Name"
+              fullWidth
+              value={newStudentName}
+              onChange={(e) => setNewStudentName(e.target.value)}
+              margin="normal"
+              style={styles.textField}
             />
-          </div>
+            <TextField
+              label="Class"
+              fullWidth
+              value={newStudentStd}
+              onChange={(e) => setNewStudentStd(e.target.value)}
+              margin="normal"
+              style={styles.textField}
+            />
+            <Typography gutterBottom>Age</Typography>
+            <Slider
+              value={newStudentAge}
+              onChange={handleAgeChange}
+              aria-labelledby="age-slider"
+              valueLabelDisplay="auto"
+              step={1}
+              marks
+              min={0}
+              max={100}
+            />
+            <TextField
+              label="Address"
+              fullWidth
+              value={newStudentAddress}
+              onChange={(e) => setNewStudentAddress(e.target.value)}
+              margin="normal"
+              style={styles.textField}
+            />
+            <TextField
+              label="Photo URL"
+              fullWidth
+              value={newStudentPhoto}
+              onChange={(e) => setNewStudentPhoto(e.target.value)}
+              margin="normal"
+              style={styles.textField}
+            />
+            <TextField
+              label="Status"
+              fullWidth
+              value={newStudentPassed}
+              onChange={(e) => setNewStudentPassed(e.target.value)}
+              margin="normal"
+              style={styles.textField}
+            />
+            <Button variant="contained" color="primary" onClick={addStudent} style={styles.button}>
+              Add Student
+            </Button>
+          </Grid>
+          <Grid item xs={12} sm={5}>
+            <div style={styles.studentDetails}>
+              {selectedStudent ? (
+                <StudentDetails student={selectedStudent} />
+              ) : (
+                <Typography variant="h6">Select a student to view details</Typography>
+              )}
+            </div>
+          </Grid>
         </Grid>
-      </Grid>
-      {selectedStudent && <StudentDetails student={selectedStudent} />}
-    </Container>
+      </Container>
+    </div>
   );
 };
 
 const styles: { [key: string]: React.CSSProperties } = {
   container: {
-    padding: '20px',
+    padding: '50px',
     backgroundColor: '#f5f5f5',
     borderRadius: '8px',
+    marginLeft: '80px',   
+    marginTop: '20px',
+    boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.1)',
   },
   title: {
     textAlign: 'center',
     marginBottom: '20px',
-    color: '#3f51b5',
+    color: '#1565c0',
   },
   textField: {
     backgroundColor: '#fff',
     borderRadius: '4px',
   },
   button: {
-    marginTop: '20px',
-    backgroundColor: '#3f51b5',
-    color: '#fff',
+    marginTop: '20px',   
+    
   },
-  studentList: {
+  studentDetails: {
     display: 'flex',
     flexDirection: 'column',
-  },
-  card: {
-    marginBottom: '10px',
-    cursor: 'pointer',
-    backgroundColor: '#e3f2fd',
-  },
-  studentName: {
-    color: '#3f51b5',
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: '20px',
+    backgroundColor: '#ffffff',
+    borderRadius: '8px',
+    boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.1)',
   },
 };
 
