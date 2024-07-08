@@ -9,53 +9,53 @@ const Sidebar: React.FC = () => {
   return (
     <Drawer variant="permanent" anchor="left">
       <List>
-        <ListItem button component={Link} to="/home">
+        <ListItem component={Link} to="/home" >
           <ListItemIcon>
             <FontAwesomeIcon icon={faHome} style={{ fontSize: '1.5rem' }} />
           </ListItemIcon>
-          <ListItemText primary={<Typography variant="body1" style={{ fontSize: '1.2rem' }}>Home</Typography>} />
+          <ListItemText primary={<Typography variant="body1" style={{ fontSize: '1.2rem' , color:"#000"}}>Home</Typography>} />
         </ListItem>
-        <ListItem button component={Link} to="/students">
+        <ListItem  component={Link} to="/students">
           <ListItemIcon>
             <FontAwesomeIcon icon={faSchool} style={{ fontSize: '1.5rem' }} />
           </ListItemIcon>
-          <ListItemText primary={<Typography variant="body1" style={{ fontSize: '1.2rem' }}>Students</Typography>} />
+          <ListItemText primary={<Typography variant="body1" style={{ fontSize: '1.2rem', color:"#000" }}>Students</Typography>} />
         </ListItem>
-        <ListItem button component={Link} to="/courses">
+        <ListItem  component={Link} to="/courses">
           <ListItemIcon>
             <FontAwesomeIcon icon={faBook} style={{ fontSize: '1.5rem' }} />
           </ListItemIcon>
-          <ListItemText primary={<Typography variant="body1" style={{ fontSize: '1.2rem' }}>Courses</Typography>} />
+          <ListItemText primary={<Typography variant="body1" style={{ fontSize: '1.2rem', color:"#000" }}>Courses</Typography>} />
         </ListItem>
-        <ListItem button component={Link} to="/profile">
+        <ListItem  component={Link} to="/profile">
           <ListItemIcon>
             <FontAwesomeIcon icon={faUser} style={{ fontSize: '1.5rem' }} />
           </ListItemIcon>
-          <ListItemText primary={<Typography variant="body1" style={{ fontSize: '1.2rem' }}>Profile</Typography>} />
+          <ListItemText primary={<Typography variant="body1" style={{ fontSize: '1.2rem', color:"#000" }}>Profile</Typography>} />
         </ListItem>
-        <ListItem button component={Link} to="/calendar">
+        <ListItem  component={Link} to="/calendar">
           <ListItemIcon>
             <FontAwesomeIcon icon={faCalendar} style={{ fontSize: '1.5rem' }} />
           </ListItemIcon>
-          <ListItemText primary={<Typography variant="body1" style={{ fontSize: '1.2rem' }}>Calendar</Typography>} />
+          <ListItemText primary={<Typography variant="body1" style={{ fontSize: '1.2rem', color:"#000" }}>Calendar</Typography>} />
         </ListItem>
         <Divider /> 
         <ListItem>
           <ListItemText primary={<Typography variant="h6">Report Cards</Typography>} />
         </ListItem>
-        <ListItem button>
+        <ListItem >
           <ListItemIcon>
             <FontAwesomeIcon icon={faFileAlt} style={{ fontSize: '1.5rem' }} />
           </ListItemIcon>
           <ListItemText primary={<Typography variant="body1" style={{ fontSize: '1.2rem' }}>Quarterly</Typography>} />
         </ListItem>
-        <ListItem button>
+        <ListItem >
           <ListItemIcon>
             <FontAwesomeIcon icon={faFileAlt} style={{ fontSize: '1.5rem' }} />
           </ListItemIcon>
           <ListItemText primary={<Typography variant="body1" style={{ fontSize: '1.2rem' }}>Half-Yearly</Typography>} />
         </ListItem>
-        <ListItem button>
+        <ListItem >
           <ListItemIcon>
             <FontAwesomeIcon icon={faFileAlt} style={{ fontSize: '1.5rem' }} />
           </ListItemIcon>
