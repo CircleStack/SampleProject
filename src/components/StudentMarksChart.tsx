@@ -32,8 +32,8 @@ const StudentMarksChart: React.FC<StudentMarksChartProps> = ({ closeCard }) => {
         }
       />
       <CardContent>
-        <Grid container spacing={2}>
-          <Grid item xs={12} md={6}>
+        <Grid container spacing={4}>
+          <Grid item xs={12} md={8}>
             <BarChart
               dataset={dataset}
               xAxis={[{ scaleType: 'band', dataKey: 'month' }]}
@@ -52,8 +52,8 @@ const StudentMarksChart: React.FC<StudentMarksChartProps> = ({ closeCard }) => {
 
 const styles = {
   card: {
-    margin: '20px',
-    padding: '20px',
+    margin: '40px',
+    padding: '40px',
     backgroundColor: '#f5f5f5',
     borderRadius: '8px',
   },
