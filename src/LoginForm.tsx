@@ -1,3 +1,4 @@
+import { TextField } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 
 
@@ -19,29 +20,17 @@ const LoginForm = () => {
         }}>
             <form style={{ backgroundColor: "lightgray", width: 500, height: 400, borderRadius: 35, marginTop: 180 }}>
                 <div >
-                    <h1 style={{ fontSize: 30, marginLeft: 200, paddingTop: 30 }}>
+                    <h1 style={{ fontSize: 30, marginLeft: 200, paddingTop: 50 }}>
                         Login
                     </h1>
 
                     <div style={{ marginTop: 25 }}>
                         <div>
-                            <h2 style={{ marginLeft: 100, fontSize: 20 }}>
-                                Email
-                            </h2>
-                            <input
-                                placeholder="Enter your Email"
-                                style={{ height: 30, width: 300, marginLeft: 100 }}
-                            />
+                            <TextField id="filled-basic" label="Email" variant="outlined" style={{ backgroundColor: "#fff", marginLeft: 100, width: 310 }} size="small" />
                         </div>
 
                         <div>
-                            <h2 style={{ marginLeft: 100, fontSize: 20 }}>
-                                Password
-                            </h2>
-                            <input
-                                placeholder="Enter your Password"
-                                style={{ height: 30, width: 300, marginLeft: 100 }}
-                            />
+                        <TextField id="filled-basic" label="Password" variant="outlined" style={{ backgroundColor: "#fff", marginLeft: 100, width: 310 , marginTop:30}} size="small" />
                         </div>
                     </div>
 
