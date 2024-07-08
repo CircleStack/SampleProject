@@ -1,4 +1,6 @@
-import { TextField } from "@mui/material";
+
+import { LockOutlined } from "@mui/icons-material";
+import { Checkbox, FormControl, FormControlLabel, Link, List, ListItem, ListItemIcon, ListItemText, TextField, Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 
 
@@ -19,10 +21,13 @@ const LoginForm = () => {
 
         }}>
             <form style={{ backgroundColor: "lightgray", width: 500, height: 400, borderRadius: 35, marginTop: 180 }}>
+              
                 <div >
-                    <h1 style={{ fontSize: 30, marginLeft: 200, paddingTop: 50 }}>
+                <LockOutlined style={{marginLeft:215, marginTop:30}} />
+                    <Typography style={{ fontSize: 25, marginLeft: 200 }}>
+
                         Login
-                    </h1>
+                    </Typography>
 
                     <div style={{ marginTop: 25 }}>
                         <div>
@@ -30,7 +35,19 @@ const LoginForm = () => {
                         </div>
 
                         <div>
-                        <TextField id="filled-basic" label="Password" variant="outlined" style={{ backgroundColor: "#fff", marginLeft: 100, width: 310 , marginTop:30}} size="small" />
+                            <TextField id="filled-basic" label="Password" variant="outlined" style={{ backgroundColor: "#fff", marginLeft: 100, width: 310, marginTop: 30 }} size="small" />
+                        </div>
+                        <div style={{ marginLeft: 100, flexDirection: "row" }}>
+                            <FormControl >
+                                <FormControlLabel
+                                    control={
+                                        <Checkbox />
+
+                                    }
+                                    label="Remember Me"
+                                />
+                            </FormControl>
+
                         </div>
                     </div>
 
@@ -38,10 +55,10 @@ const LoginForm = () => {
                         <button
                             style={{
                                 backgroundColor: "grey",
-                                marginTop: 40,
-                                marginLeft: 200,
+                                marginTop: 20,
+                                marginLeft: 100,
                                 color: "white",
-                                padding: "10px 20px",
+                                padding: "10px 140px",
                                 border: "none",
                                 borderRadius: "5px",
                                 cursor: "pointer",
@@ -63,6 +80,23 @@ const LoginForm = () => {
                         >
                             Login
                         </button>
+                        <div style={{ flexDirection: "row", marginLeft:100 }}>
+                            <Link
+                                component="button"
+                                variant="body2"
+                                style={{fontSize:12,color:"#000"}}
+                            >
+                                Forget Password?
+                            </Link>
+
+                            <Link
+                                component="button"
+                                variant="body2"
+                                style={{marginLeft:50, fontSize:12,color:"#000"}}
+                            >
+                                Don't have an account?SignUp
+                            </Link>
+                        </div>
                     </div>
 
                 </div>
