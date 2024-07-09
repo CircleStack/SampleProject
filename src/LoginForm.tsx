@@ -1,6 +1,6 @@
 
 import { LockOutlined } from "@mui/icons-material";
-import { Checkbox, FormControl, FormControlLabel, Link, List, ListItem, ListItemIcon, ListItemText, TextField, Typography } from "@mui/material";
+import { Checkbox, FormControl, FormControlLabel, Link, TextField, Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 
 
@@ -20,7 +20,7 @@ const LoginForm = () => {
             justifyContent: "center",
 
         }}>
-            <form style={{ backgroundColor: "lightgray", width: 500, height: 400, borderRadius: 35, marginTop: 180 }}>
+            <form style={{ backgroundColor: "lightgray", width: 500, height: 420, borderRadius: 35, marginTop: 180 }}>
               
                 <div >
                 <LockOutlined style={{marginLeft:215, marginTop:30}} />
@@ -93,6 +93,7 @@ const LoginForm = () => {
                                 component="button"
                                 variant="body2"
                                 style={{marginLeft:50, fontSize:12,color:"#000"}}
+                                onClick={()=>navigate("/signup")}
                             >
                                 Don't have an account?SignUp
                             </Link>
