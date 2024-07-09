@@ -29,7 +29,7 @@ const App = () => {
      >
       <BrowserRouter>
         <Routes>
-          <Route index element={<LoginForm />} />
+          <Route path="/" element={<LoginForm />} />
           <Route path="/home" element={<HomeScreen />} />
           <Route path="/students" element={<StudentListScreen students={students} setSelectedStudent={setSelectedStudent} />} />
         </Routes>
