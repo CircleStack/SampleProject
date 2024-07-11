@@ -1,7 +1,7 @@
+
+import { LockOutlined } from "@mui/icons-material";
+import { Checkbox, FormControl, FormControlLabel, Link, TextField, Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-import { TextField, Button, Typography, Grid, Checkbox, FormControlLabel, Link } from '@mui/material';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSignInAlt } from "@fortawesome/free-solid-svg-icons";
 
 
 const LoginForm = () => {
@@ -9,108 +9,102 @@ const LoginForm = () => {
     const handleLogin = () => {
         navigate('/home');
     };
-
     return (
         <div style={{
-            display: "flex",
+            backgroundImage: "url(https://d3mvlb3hz2g78.cloudfront.net/wp-content/uploads/2020/11/thumb_720_450_dreamstime_m_186895001.jpg)",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
             height: "100vh",
-            width: "100vw"
+            width: "100vw",
+            display: "flex",
+            justifyContent: "center",
+
         }}>
-            <div style={{
-                flex: 1.15,
-                backgroundImage: `url(https://mui.com/static/images/templates/templates-images/sign-in-side-bg.png)`,
-                backgroundSize: "cover",
-                backgroundPosition: "center"
-            }}>
-            </div>
-            <div style={{
-                flex: 0.85,
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                backgroundColor: "white",
-            }}>
-                <div style={{
-                    width: '100%',
-                    maxWidth: 600,
-                    display: 'flex',
-                    flexDirection: 'column',
-                    alignItems: 'center'
-                }}>
-                     <FontAwesomeIcon icon={faSignInAlt} size="2x" color="#1565c0" />
-                    <Typography variant="h4" align="center" style={styles.title} gutterBottom>
-                        Sign In 
+            <form style={{ backgroundColor: "lightgray", width: 500, height: 420, borderRadius: 35, marginTop: 180 }}>
+              
+                <div >
+                <LockOutlined style={{marginLeft:215, marginTop:30}} />
+                    <Typography style={{ fontSize: 25, marginLeft: 200 }}>
+
+                        Login
                     </Typography>
-                    <form noValidate autoComplete="off" style={{ width: '100%' }}>
-                        <Grid container spacing={3}>
-                            <Grid item xs={12}>
-                                <TextField
-                                    label="Email"
-                                    variant="outlined"
-                                    fullWidth
-                                    style={styles.textField}
-                                />
-                            </Grid>
-                            <Grid item xs={12}>
-                                <TextField
-                                    label="Password"
-                                    variant="outlined"
-                                    type="password"
-                                    fullWidth
-                                    style={styles.textField}
-                                />
-                            </Grid>
-                            <Grid item xs={12}>
+
+                    <div style={{ marginTop: 25 }}>
+                        <div>
+                            <TextField id="filled-basic" label="Email" variant="outlined" style={{ backgroundColor: "#fff", marginLeft: 100, width: 310 }} size="small" />
+                        </div>
+
+                        <div>
+                            <TextField id="filled-basic" label="Password" variant="outlined" style={{ backgroundColor: "#fff", marginLeft: 100, width: 310, marginTop: 30 }} size="small" />
+                        </div>
+                        <div style={{ marginLeft: 100, flexDirection: "row" }}>
+                            <FormControl >
                                 <FormControlLabel
-                                    control={<Checkbox name="rememberMe" color="primary" />}
+                                    control={
+                                        <Checkbox />
+
+                                    }
                                     label="Remember Me"
-                                    sx={{ color: 'black' }}             
                                 />
-                            </Grid>
-                            <Grid item xs={12}>
-                                <Button
-                                    variant="contained"
-                                    color="primary"
-                                    fullWidth
-                                    onClick={handleLogin}
-                                    style={{
-                                        padding: '10px 20px',
-                                        marginTop: 20
-                                    }}
-                                >
-                                    Sign In
-                                </Button>
-                            </Grid>
-                            <Grid item xs={6} style={{ display: 'flex', justifyContent: 'flex-start' }}>
-                                <Link href="#" variant="body2">
-                                    Forgot Password?
-                                </Link>
-                            </Grid>
-                            <Grid item xs={6} style={{ display: 'flex', justifyContent: 'flex-end' }}>
-                                <Link href="#" variant="body2">
-                                    Don't have an account? Sign Up
-                                </Link>
-                            </Grid>
-                        </Grid>
-                    </form>
+                            </FormControl>
+
+                        </div>
+                    </div>
+
+                    <div>
+                        <button
+                            style={{
+                                backgroundColor: "grey",
+                                marginTop: 20,
+                                marginLeft: 100,
+                                color: "white",
+                                padding: "10px 140px",
+                                border: "none",
+                                borderRadius: "5px",
+                                cursor: "pointer",
+                                transition: "background-color 0.3s, transform 0.3s"
+                            }}
+                            onClick={handleLogin}
+                            onMouseEnter={(e) => {
+                                (e.target as HTMLButtonElement).style.backgroundColor = "darkgrey";
+                            }}
+                            onMouseLeave={(e) => {
+                                (e.target as HTMLButtonElement).style.backgroundColor = "grey";
+                            }}
+                            onMouseDown={(e) => {
+                                (e.target as HTMLButtonElement).style.transform = "scale(0.95)";
+                            }}
+                            onMouseUp={(e) => {
+                                (e.target as HTMLButtonElement).style.transform = "scale(1)";
+                            }}
+                        >
+                            Login
+                        </button>
+                        <div style={{ flexDirection: "row", marginLeft:100 }}>
+                            <Link
+                                component="button"
+                                variant="body2"
+                                style={{fontSize:12,color:"#000"}}
+                            >
+                                Forget Password?
+                            </Link>
+
+                            <Link
+                                component="button"
+                                variant="body2"
+                                style={{marginLeft:50, fontSize:12,color:"#000"}}
+                                onClick={()=>navigate("/signup")}
+                            >
+                                Don't have an account?SignUp
+                            </Link>
+                        </div>
+                    </div>
+
                 </div>
-            </div>
+
+            </form>
         </div>
-    );
-};
+    )
+}
 
-const styles: { [key: string]: React.CSSProperties } = {
-    textField: {
-        backgroundColor: '#fff',
-        borderRadius: '4px',
-        justifyContent: "center",
-        alignItems: "center",
-    },
-    title: {
-        textAlign: 'center',
-        marginBottom: '20px',
-        color: 'Black',
-      },
-};
-
-export default LoginForm;
+export default LoginForm
