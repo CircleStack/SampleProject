@@ -21,11 +21,11 @@ const Sidebar: React.FC = () => {
           </ListItemIcon>
           <ListItemText primary={<Typography variant="body1" style={{ fontSize: '1.2rem' }}>Students</Typography>} />
         </ListItem>
-        <ListItem button component={Link} to="/courses">
+        <ListItem button component={Link} to="/books">
           <ListItemIcon>
             <FontAwesomeIcon icon={faBook} style={{ fontSize: '1.5rem' }} />
           </ListItemIcon>
-          <ListItemText primary={<Typography variant="body1" style={{ fontSize: '1.2rem' }}>Courses</Typography>} />
+          <ListItemText primary={<Typography variant="body1" style={{ fontSize: '1.2rem' }}>Books</Typography>} />
         </ListItem>
         <ListItem button component={Link} to="/profile">
           <ListItemIcon>

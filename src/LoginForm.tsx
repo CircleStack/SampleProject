@@ -1,4 +1,7 @@
 import { useNavigate } from "react-router-dom";
+import { TextField, Button, Typography, Grid, Checkbox, FormControlLabel, Link } from '@mui/material';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSignInAlt } from "@fortawesome/free-solid-svg-icons";
 
 
 const LoginForm = () => {
@@ -6,81 +9,108 @@ const LoginForm = () => {
     const handleLogin = () => {
         navigate('/home');
     };
+
     return (
         <div style={{
-            backgroundImage: "url(https://d3mvlb3hz2g78.cloudfront.net/wp-content/uploads/2020/11/thumb_720_450_dreamstime_m_186895001.jpg)",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            height: "100vh",
-            width: "100vw",
             display: "flex",
-            justifyContent: "center",
-
+            height: "100vh",
+            width: "100vw"
         }}>
-            <form style={{ backgroundColor: "lightgray", width: 500, height: 400, borderRadius: 35, marginTop: 180 }}>
-                <div >
-                    <h1 style={{ fontSize: 30, marginLeft: 200, paddingTop: 30 }}>
-                        Login
-                    </h1>
-
-                    <div style={{ marginTop: 25 }}>
-                        <div>
-                            <h2 style={{ marginLeft: 100, fontSize: 20 }}>
-                                Email
-                            </h2>
-                            <input
-                                placeholder="Enter your Email"
-                                style={{ height: 30, width: 300, marginLeft: 100 }}
-                            />
-                        </div>
-
-                        <div>
-                            <h2 style={{ marginLeft: 100, fontSize: 20 }}>
-                                Password
-                            </h2>
-                            <input
-                                placeholder="Enter your Password"
-                                style={{ height: 30, width: 300, marginLeft: 100 }}
-                            />
-                        </div>
-                    </div>
-
-                    <div>
-                        <button
-                            style={{
-                                backgroundColor: "grey",
-                                marginTop: 40,
-                                marginLeft: 200,
-                                color: "white",
-                                padding: "10px 20px",
-                                border: "none",
-                                borderRadius: "5px",
-                                cursor: "pointer",
-                                transition: "background-color 0.3s, transform 0.3s"
-                            }}
-                            onClick={handleLogin}
-                            onMouseEnter={(e) => {
-                                (e.target as HTMLButtonElement).style.backgroundColor = "darkgrey";
-                            }}
-                            onMouseLeave={(e) => {
-                                (e.target as HTMLButtonElement).style.backgroundColor = "grey";
-                            }}
-                            onMouseDown={(e) => {
-                                (e.target as HTMLButtonElement).style.transform = "scale(0.95)";
-                            }}
-                            onMouseUp={(e) => {
-                                (e.target as HTMLButtonElement).style.transform = "scale(1)";
-                            }}
-                        >
-                            Login
-                        </button>
-                    </div>
-
+            <div style={{
+                flex: 1.15,
+                backgroundImage: `url(https://mui.com/static/images/templates/templates-images/sign-in-side-bg.png)`,
+                backgroundSize: "cover",
+                backgroundPosition: "center"
+            }}>
+            </div>
+            <div style={{
+                flex: 0.85,
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                backgroundColor: "white",
+            }}>
+                <div style={{
+                    width: '100%',
+                    maxWidth: 600,
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center'
+                }}>
+                     <FontAwesomeIcon icon={faSignInAlt} size="2x" color="#1565c0" />
+                    <Typography variant="h4" align="center" style={styles.title} gutterBottom>
+                        Sign In 
+                    </Typography>
+                    <form noValidate autoComplete="off" style={{ width: '100%' }}>
+                        <Grid container spacing={3}>
+                            <Grid item xs={12}>
+                                <TextField
+                                    label="Email"
+                                    variant="outlined"
+                                    fullWidth
+                                    style={styles.textField}
+                                />
+                            </Grid>
+                            <Grid item xs={12}>
+                                <TextField
+                                    label="Password"
+                                    variant="outlined"
+                                    type="password"
+                                    fullWidth
+                                    style={styles.textField}
+                                />
+                            </Grid>
+                            <Grid item xs={12}>
+                                <FormControlLabel
+                                    control={<Checkbox name="rememberMe" color="primary" />}
+                                    label="Remember Me"
+                                    sx={{ color: 'black' }}             
+                                />
+                            </Grid>
+                            <Grid item xs={12}>
+                                <Button
+                                    variant="contained"
+                                    color="primary"
+                                    fullWidth
+                                    onClick={handleLogin}
+                                    style={{
+                                        padding: '10px 20px',
+                                        marginTop: 20
+                                    }}
+                                >
+                                    Sign In
+                                </Button>
+                            </Grid>
+                            <Grid item xs={6} style={{ display: 'flex', justifyContent: 'flex-start' }}>
+                                <Link href="#" variant="body2">
+                                    Forgot Password?
+                                </Link>
+                            </Grid>
+                            <Grid item xs={6} style={{ display: 'flex', justifyContent: 'flex-end' }}>
+                                <Link href="#" variant="body2">
+                                    Don't have an account? Sign Up
+                                </Link>
+                            </Grid>
+                        </Grid>
+                    </form>
                 </div>
-
-            </form>
+            </div>
         </div>
-    )
-}
+    );
+};
 
-export default LoginForm
+const styles: { [key: string]: React.CSSProperties } = {
+    textField: {
+        backgroundColor: '#fff',
+        borderRadius: '4px',
+        justifyContent: "center",
+        alignItems: "center",
+    },
+    title: {
+        textAlign: 'center',
+        marginBottom: '20px',
+        color: 'Black',
+      },
+};
+
+export default LoginForm;

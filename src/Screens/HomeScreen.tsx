@@ -137,7 +137,7 @@ const styles: { [key: string]: React.CSSProperties } = {
     backgroundColor: '#f5f5f5',
     borderRadius: '8px',
     marginLeft: '80px',   
-    marginTop: '20px',
+    marginTop: '50px',
     boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.1)',
   },
   title: {

@@ -87,7 +87,7 @@ const StudentListScreen: React.FC<StudentListScreenProps> = ({ students, setSele
 
 const styles: { [key: string]: React.CSSProperties } = {
   container: {
-    paddingTop: '50px', 
+    paddingTop: '80px', 
     backgroundColor: '#f5f5f5',
     borderRadius: '8px',
     marginTop: '20px',
