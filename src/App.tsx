@@ -5,6 +5,7 @@ import StudentListScreen from "./Screens/StudentListScreen"
 import BookResultsScreen from "./Screens/BookResultsScreen"
 import { useState } from "react"
 import SignUp from "./Screens/SignUp"
+import NEXTJs from "./Screens/NEXTJs"
 
 interface Student {
   id: number;
@@ -30,6 +31,7 @@ const App = () => {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<LoginForm />} />
+          <Route path="/nextjs" element={<NEXTJs />} />
           <Route path="/home" element={<HomeScreen />} />
           <Route path="/students" element={<StudentListScreen students={students} setSelectedStudent={setSelectedStudent} />} />
           <Route path="/books" element={<BookResultsScreen />} />
