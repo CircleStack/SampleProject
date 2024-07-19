@@ -4,7 +4,7 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 
 const Footer = () => {
   return (
-    <Box component="footer" className="footer_footer__mqdak" sx={{ alignItems: "center",alignContent:"center",marginTop:"100px", borderTop: '1px solid #888'}}>
+    <Box component="footer" className="footer_footer__mqdak" sx={{ alignItems: "center",alignContent:"center",marginTop:"100px", borderTop: '0.2px solid #888'}}>
       <Grid container  className="footer_grid__yp2LW" marginLeft={"40px"} marginTop={"50px"}>
         <Grid item xs={6} sm={4} md={2}>
           <Box className="stack_stack__iZkUS" display="flex" flexDirection="column" alignItems="stretch">

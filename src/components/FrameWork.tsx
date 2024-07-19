@@ -252,13 +252,14 @@ const Framework = () => {
       </Box>
       <Box sx={{ marginTop: '20px' }}>
         <Button variant="contained" sx={{
-          backgroundColor: '#fff',
-          color: '#000',
+          backgroundColor: '#000',
+          color: '#fff',
           height: '42px',
           fontSize: '16px',
           textTransform: 'none',
           ':hover': {
             backgroundColor: '#f0f0f0',
+            color:"#000"
           },
         }}
         >

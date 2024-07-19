@@ -6,7 +6,7 @@ import React from 'react'
 
 const FirstStage: React.FC = () => {
     return (
-        <div style={{ marginTop: 180, flex: 1 }}>
+        <div style={{ marginTop: 180, flex: 1 ,marginLeft:95 }}>
             <Stack direction="row" spacing={1} marginLeft={35}>
                 <Typography style={{ fontSize: 20, fontWeight: "bold", }}>Vercel Ship</Typography>
                 <div style={{
