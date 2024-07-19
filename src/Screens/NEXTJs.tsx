@@ -3,7 +3,7 @@ import ResponsiveAppBar from '../components/AppBar'
 import FirstStage from '../components/FirstStage'
 import SecondStage from '../components/SecondStage'
 
-const NextJs: React.FC = () => {
+const NEXTJs: React.FC = () => {
   return (
     <div>
       <ResponsiveAppBar />
@@ -13,4 +13,4 @@ const NextJs: React.FC = () => {
   )
 }
 
-export default NextJs
+export default NEXTJs
