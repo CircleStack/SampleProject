@@ -5,7 +5,6 @@ import StudentListScreen from "./Screens/StudentListScreen"
 import BookResultsScreen from "./Screens/BookResultsScreen"
 import { useState } from "react"
 import SignUp from "./Screens/SignUp"
-import NextJs from "./Screens/NextJs"
 import NEXTJs from "./Screens/NEXTJs"
 
 interface Student {
