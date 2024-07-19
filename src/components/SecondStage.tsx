@@ -4,7 +4,7 @@ import React from 'react'
 
 const SecondStage: React.FC = () => {
     return (
-        <div style={{ flex: 1, marginTop: 150 , marginLeft:95, marginBottom:120}}>
+        <div style={{ flex: 1, marginTop: 150 , marginLeft:100, marginBottom:120}}>
             <div style={{ marginLeft: 220 }}>
                 <Typography style={{ fontSize: 20 }}><span style={{ fontSize: 30, fontWeight: "bold", color: "#000", marginRight: 15 }}>What's in Next.js?</span>Everything you need to build great products on the web.</Typography>
             </div>

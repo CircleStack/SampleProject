@@ -37,6 +37,8 @@ const FoundationTitle = () => (
     fontWeight="700"
     textAlign="center"
     data-text="true"
+    color="#fff"
+    style={{opacity:0.6}}
   >
     Powered By
   </Typography>
@@ -58,12 +60,12 @@ const FoundationTitle = () => (
         sx={{
           width: '370px',
           height: '230px',
-          bgcolor: '#222',
-          color: '#fff',
+          bgcolor: '#fff',
+          color: '#000',
           textDecoration: 'none',
           display: 'block',
           borderRadius: '10px',
-          border: '2px solid #888',
+          border: '0.5px solid #888',
           p: 1,
         }}
         component="a"
@@ -92,7 +94,7 @@ const FoundationTitle = () => (
           <Typography variant="h6" gutterBottom>
             React
           </Typography>
-          <Typography variant="body2" color="#888">
+          <Typography variant="body2" color="gray" >
             The library for web and native user interfaces. Next.js is built on the latest React features, including Server Components and Actions.
           </Typography>
         </Box>
@@ -104,12 +106,12 @@ const FoundationTitle = () => (
         sx={{
           width: '370px',
           height: '230px',
-          bgcolor: '#222',
-          color: '#fff',
+          bgcolor: '#fff',
+          color: '#000',
           textDecoration: 'none',
           display: 'block',
           borderRadius: '10px',
-          border: '2px solid #888',
+          border: '0.5px solid #888',
           p: 1,
         }}
         component="a"
@@ -138,7 +140,7 @@ const FoundationTitle = () => (
           <Typography variant="h6" gutterBottom>
             Turbopack
           </Typography>
-          <Typography variant="body2" color="#888">
+          <Typography variant="body2" color="gray" style={{marginRight:20}}>
             An incremental bundler optimized for JavaScript and TypeScript, written in Rust, and built into Next.js.
           </Typography>
         </Box>
@@ -151,12 +153,12 @@ const FoundationTitle = () => (
         sx={{
           width: '370px',
           height: '230px',
-          bgcolor: '#222',
-          color: '#fff',
+          bgcolor: '#fff',
+          color: '#000',
           textDecoration: 'none',
           display: 'block',
           borderRadius: '10px',
-          border: '2px solid #888',
+          border: '0.5px solid #888',
           p: 1,
         }}
         component="a"
@@ -185,7 +187,7 @@ const FoundationTitle = () => (
           <Typography variant="h6" gutterBottom>
             Speedy Web Compiler
           </Typography>
-          <Typography variant="body2" color="#888">
+          <Typography variant="body2" color="gray" style={{marginRight:20}}>
             An extensible Rust based platform for fast developer tools, used for compilation and minification.
           </Typography>
         </Box>
