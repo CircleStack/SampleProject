@@ -134,7 +134,7 @@ const GetStartedSection = () => {
             </Typography>
           </Grid>
           <Grid item  marginLeft={"240px"}>
-            <Button variant="contained" style={{ backgroundColor: 'white', color: 'black', marginTop: '10px', textOverflow: "ellipsis" }}
+            <Button variant="contained" style={{ backgroundColor: '#000', color: '#fff', marginTop: '10px', textOverflow: "ellipsis" }}
             endIcon={(
               <IconButton>
                 <svg
@@ -143,7 +143,7 @@ const GetStartedSection = () => {
                   fill="none"
                   height="24"
                   shapeRendering="geometricPrecision"
-                  stroke="currentColor"
+                  stroke="#fff"
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   strokeWidth="1.5"

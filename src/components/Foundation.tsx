@@ -5,8 +5,8 @@ import {  Grid } from '@mui/material';
 
 const FoundationTitle = () => (
   <>
-  <Box sx = {{borderTop: '1px solid #888', borderBottom: '1px solid #888', }}  >
-    <Typography fontSize="32px" fontWeight="700" color="#fff" textAlign="center" marginTop={"100px"}>
+  <Box sx = {{borderTop: '0.2px solid #888', borderBottom: '0.2px solid #888', }}  >
+    <Typography fontSize="32px" fontWeight="700" color="#000" textAlign="center" marginTop={"100px"}>
       Built on a foundation of fast, production-grade tooling
     </Typography>
     <Box

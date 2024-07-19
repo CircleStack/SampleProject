@@ -31,11 +31,11 @@ const App = () => {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<LoginForm />} />
-          <Route path="/nextjs" element={<NEXTJs />} />
           <Route path="/home" element={<HomeScreen />} />
           <Route path="/students" element={<StudentListScreen students={students} setSelectedStudent={setSelectedStudent} />} />
           <Route path="/books" element={<BookResultsScreen />} />
           <Route path="/signup" element={<SignUp />} />     
+          <Route path="/Next" element={<NEXTJs />} />
         </Routes>
       </BrowserRouter>
     </div>
